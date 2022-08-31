@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   mem: any;
   constructor(private authSvc: AuthService) { }
