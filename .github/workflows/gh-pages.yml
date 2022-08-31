@@ -35,4 +35,4 @@ jobs:
 
       - name: Deploy
         if: success()
-        run: aws s3 sync ./dist/client-fenix s3://fenixpaddev01
+        run: aws s3 sync ./dist/fenix s3://fenixpaddev01
