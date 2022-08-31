@@ -12,7 +12,10 @@ export class HomeComponent implements OnInit {
   constructor(private authSvc: AuthService) { }
 
   ngOnInit(): void {
-    this.authSvc.members().subscribe((res: any) => { this.mem = res.body; });
+    this.authSvc.members().subscribe((res: any) => {
+      this.mem = res;
+      console.log(res);
+    });
   }
 
 }
