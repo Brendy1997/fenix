@@ -1,0 +1,12 @@
+.wrap-home {
+  display: flex;
+}
+
+.side-bar {
+  width: 250px;
+  border-right: 1px solid #000;
+}
+
+.home {
+  flex-grow: auto;
+}
