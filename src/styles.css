@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0 !important;
-  font-family: "Rajdhani";
+  font-family: Rajdhani !important;
+  background-color: rgb(241, 245, 249) !important;
+}
+
+:root {
+  --bs-primary: #00AF29 !important;
+  --bs-body-color-rgb: #034312 !important;
+  --bs-link-color: #00AF29 !important;
+  --bs-link-hover-color: #034312 !important;
+  --bs-nav-link-color: #00AF29 !important;
+  --bs-nav-link-hover-color: #034312 !important;
 }

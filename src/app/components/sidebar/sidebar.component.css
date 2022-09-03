@@ -2,3 +2,47 @@
   max-width: 100%;
   margin: 0 auto;
 }
+
+.circle {
+  border: 1px solid #00AF29;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-body {
+  font-size: 18px;
+  max-height: calc(100% - 220px);
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+::-webkit-scrollbar-button:increment,
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #79797978;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}

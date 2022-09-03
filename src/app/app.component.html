@@ -1,8 +1,12 @@
 <div class="content wrap-home" role="main">
   <app-sidebar class="side-bar"></app-sidebar>
-  <router-outlet class="home"><span style="display:none">{{title}} app is running!</span>
+  <div class="home">
+    <app-nav-bar></app-nav-bar>
+    <router-outlet><span style="display:none">{{title}} app is running!</span>
 
-  </router-outlet>
+    </router-outlet>
+  </div>
+
 
 
 </div>
