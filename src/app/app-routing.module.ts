@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FairlaunchComponent } from './components/create/fairlaunch/fairlaunch.component';
+import { PresaleComponent } from './components/create/presale/presale.component';
 import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  // { path: 'contact', component: ContactComponent },
-  // { path: 'faq', component: FaqComponent },
+  { path: 'presale', component: PresaleComponent },
+  { path: 'fairlaunch', component: FairlaunchComponent },
   // { path: 'piderecarga', component: PideRecargaComponent },
   // { path: 'pr_confirmacion', component: PrConfirmacionComponent },
   // { path: 'promociones', component: PromocionesComponent },
