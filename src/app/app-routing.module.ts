@@ -3,11 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { FairlaunchComponent } from './components/create/fairlaunch/fairlaunch.component';
 import { PresaleComponent } from './components/create/presale/presale.component';
 import { HomeComponent } from './components/home/home.component';
+import { ListComponent } from './components/list/list.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home/list', pathMatch: 'full' },
+  {
+    path: 'home', component: HomeComponent,
+    children: [
+      { path: 'list', component: ListComponent }
+    ]
+  },
   { path: 'presale', component: PresaleComponent },
   { path: 'fairlaunch', component: FairlaunchComponent },
   // { path: 'piderecarga', component: PideRecargaComponent },

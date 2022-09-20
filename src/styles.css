@@ -13,3 +13,11 @@ body {
   --bs-nav-link-color: #00AF29 !important;
   --bs-nav-link-hover-color: #034312 !important;
 }
+
+.btn-primary {
+  background-color: #00AF29;
+}
+
+a {
+  text-decoration: none;
+}

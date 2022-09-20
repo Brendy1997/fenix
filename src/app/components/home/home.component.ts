@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Presale } from 'src/app/class/presale';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,14 +9,18 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 
 export class HomeComponent implements OnInit {
-  mem: any;
+
+  presales: any = [];
+
   constructor(private authSvc: AuthService) { }
 
   ngOnInit(): void {
-    this.authSvc.members().subscribe((res: any) => {
-      this.mem = res;
-      console.log(res);
-    });
+
+
+    this.authSvc.getPresales().subscribe((res: any) => {
+      this.presales = res;
+
+    })
   }
 
 }

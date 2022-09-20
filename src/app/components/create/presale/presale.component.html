@@ -1,5 +1,311 @@
-<div class="content p-5">
-  <div class="card p-4 h-100">
-    <h2>Create Presale</h2>
+<div class="content ps-5 pe-5">
+  <div class=" p-4 h-100">
+    <!-- <div class="title-card">
+      <h2>Create Presale</h2>
+    </div> -->
+    <div class="content-card">
+      <form class="js-step-form py-md-5" [formGroup]="addPresale">
+        <div class="row justify-content-lg-center">
+          <div class="col-10">
+            <!-- Step -->
+            <ul id="addUserStepFormProgress"
+              class="js-step-progress step step-sm step-icon-sm step step-inline step-item-between mb-3 mb-md-5">
+              <li class="step-item active step-1">
+                <a class="step-content-wrapper" href="javascript:;" data-hs-step-form-next-options='{
+                          "targetSelector": "#addUserStepProfile"
+                        }'>
+                  <span class="step-icon step-icon-soft-dark">1</span>
+                  <div class="step-content">
+                    <span class="step-title">Profile</span>
+                  </div>
+                </a>
+              </li>
+
+              <li class="step-item step-2">
+                <a class="step-content-wrapper" href="javascript:;" data-hs-step-form-next-options='{
+                          "targetSelector": "#addUserStepBillingAddress"
+                        }'>
+                  <span class="step-icon step-icon-soft-dark">2</span>
+                  <div class="step-content">
+                    <span class="step-title">Billing address</span>
+                  </div>
+                </a>
+              </li>
+
+              <li class="step-item step-3">
+                <a class="step-content-wrapper" href="javascript:;" data-hs-step-form-next-options='{
+                          "targetSelector": "#addUserStepConfirmation"
+                        }'>
+                  <span class="step-icon step-icon-soft-dark">3</span>
+                  <div class="step-content">
+                    <span class="step-title">Confirmation</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <!-- End Step -->
+
+            <!-- Content Step Form -->
+            <div id="addPresale" class="step-card">
+              <!-- Card -->
+              <div id="step-1" class="card card-lg active">
+                <!-- Body -->
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label for="tokenAddress" class="form-label">Token address</label>
+                    <input type="email" class="form-control" id="tokenAddress" placeholder="0X09192839278fec778abc7783"
+                      formControlName="tokenAddress">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="" class="form-label">Currency</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" formControlName="currency" id="flexRadioDefault1"
+                        value="bnb" checked>
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        BNB
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" formControlName="currency" id="flexRadioDefault2"
+                        value="busd">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        BUSD
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" formControlName="currency" id="flexRadioDefault2"
+                        value="usdt">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        USDT
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" formControlName="currency" id="flexRadioDefault2"
+                        value="usdc">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        USDC
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="" class="form-label">Fee Options</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" formControlName="feeOpt" id="flexRadioDefault1"
+                        value="bnbOnly">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        % BNB raised only
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" formControlName="feeOpt" id="flexRadioDefault2"
+                        value="bnbToken">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        % BNB raised and % token sold
+                      </label>
+                    </div>
+
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="" class="form-label">Listing Options</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" formControlName="listingOpt" id="flexRadioDefault1"
+                        value="auto">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Auto Listing
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" formControlName="listingOpt" id="flexRadioDefault2"
+                        value="manual">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Manual Listing
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- End Body -->
+
+                <!-- Footer -->
+                <div class="card-footer d-flex justify-content-end align-items-center">
+                  <button type="button" class="btn btn-primary" (click)="NextStep('step-2')"
+                    [disabled]="!this.addPresale.get('tokenAddress')?.value">
+                    Next <i class="bi-chevron-right"></i>
+                  </button>
+                </div>
+                <!-- End Footer -->
+              </div>
+              <!-- End Card -->
+
+              <div id="step-2" class="card card-lg">
+                <!-- Body -->
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label for="tokenAddress" class="form-label">Presale rate</label>
+                    <input type="text" class="form-control" id="tokenAddress" placeholder="100"
+                      formControlName="presaleRate">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="" class="form-label">White List</label>
+                    <div class="d-flex">
+                      <div class="form-check me-2">
+                        <input class="form-check-input" type="radio" formControlName="currency" id="flexRadioDefault1"
+                          value="bnb" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          BNB
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="currency" id="flexRadioDefault2"
+                          value="busd">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          BUSD
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label for="tokenAddress" class="form-label">Presale rate</label>
+                          <input type="text" class="form-control" id="tokenAddress" placeholder="100"
+                            formControlName="presaleRate">
+                        </div>
+                        <div class="mb-3">
+                          <label for="tokenAddress" class="form-label">Presale rate</label>
+                          <input type="text" class="form-control" id="tokenAddress" placeholder="100"
+                            formControlName="presaleRate">
+                        </div>
+
+                        <div class="mb-3">
+                          <label>Router</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="tokenAddress" class="form-label">Presale rate</label>
+                          <input type="text" class="form-control" id="tokenAddress" placeholder="100"
+                            formControlName="presaleRate">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label for="tokenAddress" class="form-label">Presale rate</label>
+                          <input type="text" class="form-control" id="tokenAddress" placeholder="100"
+                            formControlName="presaleRate">
+                        </div>
+                        <div class="mb-3">
+                          <label for="tokenAddress" class="form-label">Presale rate</label>
+                          <input type="text" class="form-control" id="tokenAddress" placeholder="100"
+                            formControlName="presaleRate">
+                        </div>
+                        <div class="mb-3">
+                          <label>Refound Type</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="tokenAddress" class="form-label">Presale rate</label>
+                          <input type="text" class="form-control" id="tokenAddress" placeholder="100"
+                            formControlName="presaleRate">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+                <!-- End Body -->
+
+                <!-- Footer -->
+                <div class="card-footer d-flex align-items-center">
+
+
+                  <div class="ms-auto">
+                    <button type="button" class="btn btn-primary" (click)="NextStep('step-3')">
+                      Next <i class="bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- End Footer -->
+              </div>
+
+              <div id="step-3" class="card card-lg">
+                <!-- Body -->
+                <div class="card-body">
+                  <h1>Hola</h1>
+                  <h1>Hola</h1>
+                  <h1>Hola</h1>
+                  <h1>Hola</h1>
+                  <h1>Hola</h1>
+
+                </div>
+                <!-- End Body -->
+
+                <!-- Footer -->
+                <div class="card-footer d-flex align-items-center">
+
+
+                  <div class="ms-auto">
+                    <button type="button" class="btn btn-primary" (click)="NextStep('successMessageContent')">
+                      Next <i class="bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- End Footer -->
+              </div>
+
+
+            </div>
+            <!-- End Content Step Form -->
+
+            <!-- Message Body -->
+            <div class="step-card">
+              <div id="successMessageContent" class="card">
+                <div class="text-center">
+                  <img class="img-fluid mb-3" src="./assets/svg/illustrations/oc-hi-five.svg" alt="Image Description"
+                    data-hs-theme-appearance="default" style="max-width: 15rem;">
+                  <img class="img-fluid mb-3" src="./assets/svg/illustrations-light/oc-hi-five.svg"
+                    alt="Image Description" data-hs-theme-appearance="dark" style="max-width: 15rem;">
+
+                  <div class="mb-4">
+                    <h2>Successful!</h2>
+                    <p>New <span class="fw-semi-bold text-dark">Ella Lauda</span> user has been successfully created.
+                    </p>
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <a class="btn btn-white me-3" href="./users.html">
+                      <i class="bi-chevron-left ms-1"></i> Back to users
+                    </a>
+                    <a class="btn btn-primary" href="./users-add-user.html">
+                      <i class="bi-person-plus-fill me-1"></i> Add new user
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Message Body -->
+          </div>
+        </div>
+        <!-- End Row -->
+      </form>
+    </div>
+
+
   </div>
 </div>

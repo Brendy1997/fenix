@@ -1,0 +1,43 @@
+<div class="container ps-10 pe-5">
+  <div class="row">
+    <div class="col-4 p-3" *ngFor="let pre of presales">
+      <div class="card p-3 text-center ">
+        <img src="{{pre.urlPhoto}}" alt="" class="presale-icon mb-2">
+        <h3>{{pre.name}}</h3>
+        <h4>Presale {{pre.status}}</h4>
+        <div class="d-flex justify-content-between">
+          <span class="fw-bold">Network: </span>
+          <span>{{pre.network}}</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-bold">Total Sale: </span>
+          <span>{{pre.totalSale}}</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-bold">Remaining: </span>
+          <span>{{pre.remaining}}</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-bold">Min Contribution: </span>
+          <span>{{pre.minContribution}}</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-bold">Max Contribution: </span>
+          <span>{{pre.maxContribution}}</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-bold">Exchange Rate: </span>
+          <span>{{pre.exchangeRate}}</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-bold">Start Date: </span>
+          <span>{{pre.startDate}}</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-bold">End Date: </span>
+          <span>{{pre.endDate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
