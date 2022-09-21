@@ -12,6 +12,7 @@ import { FairlaunchComponent } from './components/create/fairlaunch/fairlaunch.c
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './components/list/list.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
